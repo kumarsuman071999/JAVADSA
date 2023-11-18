@@ -13,6 +13,29 @@ class Test10{
             return total;
         }
     }
+
+    // in this one test case failed base=2 power=0
+    public static  long power2(long a,long b){
+        long mid=0,result=0,finalresult=0;
+        if(b==1 ){
+            return a;
+        }
+
+        else {
+            mid=b/2;
+            result=power2(a,mid);
+            finalresult=result*result;
+
+            if(b%2==0){
+                return finalresult;
+            }
+
+            else{
+                return a*finalresult;
+            }
+
+        }
+    }
 }
 
 public class PowerRecursion {
@@ -26,6 +49,9 @@ public class PowerRecursion {
         long power= sc.nextLong();
         long total=Test10.Power(power,base);
         System.out.println(total);
+
+        long tota1= Test10.power2(base,power);
+        System.out.println(tota1);
 
 
 
